@@ -21,25 +21,15 @@
             "to": ":userRoles/:classId/students"
           },
           {
-            "title": "Coursess",
+            "title": "Courses",
             "icon": "AssignmentOutlined",
             "to": ":userRoles/:classId/assignment"
           }
 
         ]
-      },
-      {
-        "division": "Add ons",
-        "section": [
-   
-        ]
-      },
-      {
-        "division": "Miscellaneous",
-        "section": [
-
-        ]
       }
+  
+ 
     ]
   },
   {
@@ -59,7 +49,7 @@
         "division": "Addons",
         "section": [
           {
-            "title": "Coursess",
+            "title": "Courses",
             "icon": "AssignmentOutlined",
             "to": ":userRoles/:classId/assignments"
           },
@@ -72,17 +62,8 @@
             "title": "Calendar",
             "icon": "CalendarMonthOutlined",
             "to": ":userRoles/:classId/calendar"
-          },
-          {
-            "title": "Examinations",
-            "icon": "QuizOutlined",
-            "to": ":userRoles/:classId/examinations"
-          },
-          {
-            "title": "Results",
-            "icon": "AssessmentOutlined",
-            "to": ":userRoles/:classId/results"
           }
+   
         ]
       }
     ]

@@ -41,7 +41,7 @@ const StyledTypography = styled(Typography)(() => ({
   color: 'red',
 }));
 
-export const AddCoursess = () => {
+export const AddCourses = () => {
   const { classId } = useParams(); // Retrieve classId from URL parameters
 
   const [addAssignment, { isLoading }] = useAddAssignmentMutation(); // Mutation hook for adding assignment

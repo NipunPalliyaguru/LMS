@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { UpdateAssignment } from './UpdateAssignment';
 import Loading from '../../../Components/Loading';
 
-export const ViewCoursess = ({ data }) => {
+export const ViewCourses = ({ data }) => {
   const { classId } = useParams(); // Retrieve classId from the URL parameters
 
   const [deleteAssignment, { isLoading }] = useDeleteAssignmentMutation();
@@ -125,8 +125,7 @@ export const ViewCoursess = ({ data }) => {
                     <Typography variant="h3">{item.subject}</Typography>
                     <Typography variant="h3"><hr></hr></Typography>
                     <Typography variant="body2" align="justify">{item.description}</Typography>
-                    <Typography variant="body2">Due: {item.lastDate}</Typography>
-                    <Typography variant="body2">Assigned by: {item.assignedBy}</Typography>
+                    <Typography variant="body2" mt={2}>Assigned by: {item.assignedBy}</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
                       <IconButton color="primary" onClick={() => handleEdit(item.id)}>
                         <Edit />

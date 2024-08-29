@@ -5,8 +5,8 @@ import { useGetTeacherDataQuery } from '../teachersApiSlice';
 import Loading from '../../../Components/Loading';
 import Error from '../../../Components/Error';
 import { TeacherCardWrapper } from '../../../Components/TeacherCardWrapper';
-import { AddCoursess } from './AddAssignment';
-import { ViewCoursess } from './ViewAssignments';
+import { AddCourses } from './AddAssignment';
+import { ViewCourses } from './ViewAssignments';
 
 // Assignment Container
 // Renders the assignment based on the classId
@@ -17,7 +17,7 @@ export const TeacherAssignmentContainer = () => {
   const { data, isLoading, isSuccess, isError, error } =
     useGetTeacherDataQuery(classId);
 
-  // Filtering Coursess Data
+  // Filtering Courses Data
   const { assignments } = data || {};
 
   let content;
@@ -31,8 +31,8 @@ export const TeacherAssignmentContainer = () => {
     content = (
       <TeacherCardWrapper
         title='Courses'
-        dialogChildren={<AddCoursess />}
-        children={<ViewCoursess data={assignments} />}
+        dialogChildren={<AddCourses />}
+        children={<ViewCourses data={assignments} />}
       />
     );
   }

@@ -12,7 +12,7 @@ import { TeacherResultsContainer } from '../Features/Teachers/Results/TeacherRes
 import { Attendance } from '../Features/Teachers/Attendance/Attendance';
 import { OtherInfo } from '../Features/Teachers/MiscellaneousInfo/OtherInfo';
 import StudentDashboard from '../Features/Student/StudentDashboard';
-import { Coursess } from '../Features/Student/Assignments';
+import { Courses } from '../Features/Student/Assignments';
 import { Timetable } from '../Features/Student/Timetable';
 import { Examination } from '../Features/Student/Examination';
 import { Results } from '../Features/Student/Results';
@@ -72,7 +72,7 @@ const DashboardRoutes = () => {
           <Route path='student/:classId' element={<StudentDashboard />} />
           <Route
             path='student/:classId/assignments'
-            element={<Coursess />}
+            element={<Courses />}
           />
           <Route path='student/:classId/timetable' element={<Timetable />} />
           <Route

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@emotion/react';
@@ -7,18 +7,12 @@ import {
   Box,
   Divider,
   Fab,
-  FormControl,
-  IconButton,
-  InputLabel,
-  MenuItem,
   Paper,
   Popover,
-  Select,
+  IconButton,
 } from '@mui/material';
 
 import {
-  selectCurrentClassAssigned,
-  selectCurrentClassId,
   selectCurrentRole,
   setClass,
 } from '../../Features/Auth/AuthSlice';
@@ -29,12 +23,11 @@ export const LandingPage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
 
-  const assignedClasses = useSelector(selectCurrentClassAssigned);
   const role = useSelector(selectCurrentRole);
-  const currentClassId = useSelector(selectCurrentClassId);
 
-  const [classId, setClassId] = useState(currentClassId);
-  const title = classId === 0 ? 'Select a class' : `Class ${classId}`;
+  // Hardcoded classId
+  const classId = 1;
+  const title = `Class ${classId}`;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -103,26 +96,6 @@ export const LandingPage = () => {
                 p: 2,
               }}
             >
-              <Box sx={{ minWidth: '100px' }}>
-                {/* --------- select class ------------- */}
-                <FormControl variant='filled' fullWidth>
-                  <InputLabel id='examType'>Class</InputLabel>
-                  <Select
-                    labelId='examType'
-                    id='examType'
-                    name='examType'
-                    value={classId}
-                    onChange={(e) => setClassId(e.target.value)}
-                    label='Select your Class'
-                  >
-                    {assignedClasses.map((cls) => (
-                      <MenuItem key={cls} value={cls}>
-                        {cls}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </Box>
               {/* ------- Submit Button  ---------- */}
               <Box textAlign='center'>
                 <Fab
